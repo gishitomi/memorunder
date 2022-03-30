@@ -10,9 +10,9 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-color-green">
+        <nav class="navbar navbar-expand-lg navbar-light bg-color-green sticky-top">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">メモルンダー</a>
+                <a class="navbar-brand text-white" asp-controller="Diary" asp-action="Index">メモルンダー</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -29,6 +29,20 @@
             </div>
         </nav>
     </header>
+    <div class="side-menu-bar container-fluid">
+        <div class="d-month-list">
+            <div class="d-month-item">
+                <p>X月</p>
+            </div>
+            <div class="d-month-item">
+                <p>X月</p>
+            </div>
+        </div>
+        <div class="goal-box">
+
+        </div>
+    </div>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
