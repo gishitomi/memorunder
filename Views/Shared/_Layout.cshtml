@@ -5,10 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - memorunder</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="~/css/layout.css" />
+    @RenderSection("Styles", required: false)
 </head>
 <body>
+
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-color-green sticky-top">
             <div class="container-fluid">
@@ -29,24 +35,37 @@
             </div>
         </nav>
     </header>
-    <div class="side-menu-bar container-fluid">
-        <div class="d-month-list">
-            <div class="d-month-item">
-                <p>X月</p>
+    <div class="container-body">
+        <div class="side-menu-bar container-fluid">
+            <div class="d-month-list">
+                <div class="d-month-item">
+                    <p>X月</p>
+                </div>
+                <div class="d-month-item">
+                    <p>X月</p>
+                </div>
             </div>
-            <div class="d-month-item">
-                <p>X月</p>
+            <div class="goal-box">
+                <div class="goal-title">
+                    <p>X月の予定</p>
+                </div>
+                <div class="goal-list">
+                    <p class="goal-one">1. XXXX</p>
+                    <p class="goal-two">2. XXXX</p>
+                    <p class="goal-three">3. XXXX</p>
+                </div>
+                <div class="goal-form">
+                    <form method="post">
+                        <input type="text" id="goal-input" name="goal-input" placeholder="今月の目標を入力してください">
+                        <button class="btn-success" type="submit">送信</button>
+                    </form>
+                </div>
             </div>
         </div>
-        <div class="goal-box">
 
+        <div class="container-main">
+                @RenderBody()
         </div>
-    </div>
-
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
     </div>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
