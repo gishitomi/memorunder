@@ -1,3 +1,37 @@
+body {
+    margin:0;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .bg-color-green {
     background-color: green;
 }
+
+
+.container-body {
+    display:flex;
+    width: calc(100% - 40px);
+    height: calc(90vh - 40px);
+    margin: 20px;
+}
+
+.side-menu-bar {
+    width:20%;
+    display: flex;
+    flex-direction:column;
+    justify-content: space-between;
+}
+
+.container-main {
+    width:80%;
+}
+
+
+/*ページネーション*/
+.pagenation {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px 0;
+}
+

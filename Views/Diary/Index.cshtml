@@ -65,18 +65,18 @@
     }
 
 @section Styles {
-    <link rel="stylesheet" href="~/css/Diary/diary.css" />
+    <link rel="stylesheet" href="~/css/Diary/style.css" />
 }
 
 <div class="diary-top">
     <div class="pagenation">
-        <div class="pagenation-left">
+        <div class="pagenatiojn-item pagenation-left">
             <p>X-1月</p>
         </div>
-        <div class="pagenation-center">
+        <div class="pagenatiojn-item pagenation-center">
             <p>X月</p>
         </div>
-        <div class="pagenation-right">
+        <div class="pagenatiojn-item pagenation-right">
             <p>X+1月</p>
         </div>
     </div>
@@ -91,9 +91,9 @@
                 <th>金</th>
                 <th>土</th>
             </tr>
-            @foreach(string item in weeks)
+            @foreach(string weekItem in weeks)
       {
-        <tr>@Html.Raw(item)</tr>
+        <tr>@Html.Raw(weekItem)</tr>
       }
         </table>
     </div>
