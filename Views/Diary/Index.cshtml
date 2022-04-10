@@ -13,62 +13,56 @@
     DayOfWeek dow = firstDay.DayOfWeek;
     int youbi = (int)dow;
 
-    //現在の月の週の数を取得
-
-
     //カレンダー作成の準備
-    string[] weeks;
+    //string[] weeks;
+    var weeks = new List<string>();
     string week = "";
 
     //一週目のセルの追加
     // 例）１日が火曜日だった場合、日・月曜日の２つ分の空セルを追加する
     for (int i = 0; i < youbi; i++)
     {
-        week += "<td></td>";
+      week += "<td></td>";
     }
 
     String date = "";
 
     for (int day = 1; day <= dayCount; day++)
     {
-        date = ym + "-" + String.Format("{0:D2}",day);
-        if (date == today.ToString("yyyy-MM-dd"))
+      date = ym + "-" + String.Format("{0:D2}",day);
+      if (date == today.ToString("yyyy-MM-dd"))
+      {
+        week += "<td class='today'>" + day.ToString();
+      } else
+      {
+        week += "<td>" + day.ToString();
+      }
+      week += "</td>";
+
+      //週終わり、または月終わりの場合
+      if (youbi % 7 == 6 || day == dayCount)
+      {
+        if (day == dayCount)
         {
-            week += "<td class='today'>" + day.ToString();
-        } else
-        {
-            week += "<td>" + day.ToString();
+          // 月の最終日の場合、空セルを追加
+          // 例）最終日が水曜日の場合、木・金・土曜日の空セルを追加
+          int restYoubi = 6 - youbi;
+          for (int i = 0; i < restYoubi; i++)
+          {
+            week += "<td></td>";
+          }
         }
-        week += "</td>";
+        //weeks配列にweekを追加する
+        //weeks.Add("<tr>" + week + "</tr>");
+        weeks.Add(week);
+        //weekをリセット
+        week = "";
+      }
 
-        //週終わり、または月終わりの場合
-        if(youbi % 7 == 6 || day == dayCount) 
-        {
-            if(day == dayCount)
-            {
-                // 月の最終日の場合、空セルを追加
-                // 例）最終日が水曜日の場合、木・金・土曜日の空セルを追加
-                int restYoubi = 6 - youbi;
-                for(int i = 0; i < restYoubi; restYoubi++)
-                {
-                    week += "<td></td>";
-                }
-            }
-            //weeks配列にweekを追加する
-            weeks[] = "<tr>" + week + "</tr>";
-        }
-
-
-
-      //weekをリセット
-      week = "";
-
+      youbi++;
     }
 
-
-
-
-}
+    }
 
 @section Styles {
     <link rel="stylesheet" href="~/css/Diary/diary.css" />
@@ -97,51 +91,10 @@
                 <th>金</th>
                 <th>土</th>
             </tr>
-            <tr>
-                <td></td>
-                <td></td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-                <td>5</td>
-            </tr>
-            <tr>
-                <td>6</td>
-                <td>7</td>
-                <td>8</td>
-                <td>9</td>
-                <td>10</td>
-                <td>11</td>
-                <td>12</td>
-            </tr>
-            <tr>
-                <td>13</td>
-                <td>14</td>
-                <td>15</td>
-                <td class="today">16</td>
-                <td>17</td>
-                <td>18</td>
-                <td>19</td>
-            </tr>
-            <tr>
-                <td>20</td>
-                <td>21</td>
-                <td>22</td>
-                <td>23</td>
-                <td>24</td>
-                <td>25</td>
-                <td>26</td>
-            </tr>
-            <tr>
-                <td>27</td>
-                <td>28</td>
-                <td>29</td>
-                <td>30</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            @foreach(string item in weeks)
+      {
+        <tr>@Html.Raw(item)</tr>
+      }
         </table>
     </div>
 </div>
