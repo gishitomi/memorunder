@@ -16,5 +16,11 @@ namespace memorunder.Controllers
     {
       return View();
     }
+
+    //日記作成画面
+    public IActionResult Create()
+        {
+            return View();
+        }
   }
 }
