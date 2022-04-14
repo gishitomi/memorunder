@@ -14,6 +14,10 @@ namespace memorunder.Controllers
     //トップページ（日記一覧画面）
     public IActionResult Index()
     {
+      //現在の月を取得
+      DateTime today = DateTime.Now;
+      ViewBag.month = today.Month;
+
       return View();
     }
 

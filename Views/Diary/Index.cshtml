@@ -1,8 +1,8 @@
-@using memorunder.Models
+@using memorunder.Common
 
 @{
     //View内の処理を記述
-    Diary calendar = new Diary();
+    Calendar calendar = new Calendar();
 
     string[] weeks = calendar.CreateCalendar();
 
@@ -15,13 +15,13 @@
 <div class="diary-top">
     <div class="pagenation">
         <div class="pagenatiojn-item pagenation-left">
-            <p>X-1月</p>
+            <p>@(ViewBag.month - 1) 月</p>
         </div>
         <div class="pagenatiojn-item pagenation-center">
-            <p>X月</p>
+            <p>@ViewBag.month 月</p>
         </div>
         <div class="pagenatiojn-item pagenation-right">
-            <p>X+1月</p>
+            <p>@(ViewBag.month + 1) 月</p>
         </div>
     </div>
     <div class="calendar">
