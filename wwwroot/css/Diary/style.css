@@ -1,3 +1,5 @@
+﻿/*日記一覧画面（トップページ）*/
+
 .calender {
     font-family: 'Noto Sans JP', sans-serif;
     margin-top: 80px;
@@ -27,3 +29,39 @@ th:nth-of-type(1), td:nth-of-type(1) {
 th:nth-of-type(7), td:nth-of-type(7) {
     color: blue;
 }
+
+/*日記作成ページ*/
+
+.create-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.diary-create {
+  margin: 10px auto;
+  width: 90%;
+}
+
+.diary-title {
+  margin: 20px 0;
+  border: none;
+  font-size: 1.5rem;
+}
+
+  .diary-title:focus {
+      outline: none;
+  }
+
+.diary-text {
+  margin: 20px 0;
+  font-size: 1rem;
+}
+
+  .diary-text:focus {
+    outline: none;
+  }
+
+.clear-btn {
+    margin-right: 20px;
+}
+

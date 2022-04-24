@@ -4,7 +4,24 @@
     //View内の処理を記述
 }
 
-<h1>日記を作るぜー</h1>
-    <section>
-        <i class="fa-regular fa-face-smile"></i><!-- 追記したコード -->
-    </section>
+@section Styles {
+    <link rel="stylesheet" href="~/css/Diary/style.css" />
+}
+
+<div class="diary-create">
+    <div class="create-navbar">
+        <div class="back-btn">
+            <a href="@Url.RouteUrl("default", new {Controller = "Diary", Action = "Index" })" class="btn btn-secondary">戻る</a>
+        </div>
+        <div class="btn-box">
+            <button type="button" class="btn btn-light clear-btn">クリア</button>
+            <button type="submit" class="btn btn-success create-btn">日記作成</button>
+        </div>
+    </div>
+    <input class="diary-title" type="text" placeholder="日記タイトル">
+
+    <div class="diary-text" role="textbox" contenteditable="true" translate="no">
+        <p>今日の出来事を書いてみましょう。</p>
+    </div>
+
+</div>

@@ -1,4 +1,4 @@
-body {
+ï»¿body {
     margin:0;
     height: 100vh;
     overflow: hidden;
@@ -28,8 +28,8 @@ body {
 }
 
 
-/*ƒy[ƒWƒl[ƒVƒ‡ƒ“*/
-.pagenation {
+/*ï¿½yï¿½[ï¿½Wï¿½lï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½*/
+.pagination {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px 0;

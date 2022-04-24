@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace memorunder.Controllers.Base
 {
-    public class BasePageController : Controller
+    public class BasePageController : BaseController
     {
         // GET: /<controller>/
         public IActionResult Index()

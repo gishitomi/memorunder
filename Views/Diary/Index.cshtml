@@ -1,4 +1,4 @@
-@using memorunder.Common
+﻿@using memorunder.Common
 
 @{
     //View内の処理を記述
@@ -13,14 +13,14 @@
 }
 
 <div class="diary-top">
-    <div class="pagenation">
-        <div class="pagenatiojn-item pagenation-left">
+    <div class="pagination">
+        <div class="paginatiojn-item pagination-left">
             <p>@(ViewBag.month - 1) 月</p>
         </div>
-        <div class="pagenatiojn-item pagenation-center">
+        <div class="paginatiojn-item pagination-center">
             <p>@ViewBag.month 月</p>
         </div>
-        <div class="pagenatiojn-item pagenation-right">
+        <div class="paginatiojn-item pagination-right">
             <p>@(ViewBag.month + 1) 月</p>
         </div>
     </div>
